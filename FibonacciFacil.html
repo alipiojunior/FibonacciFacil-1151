@@ -1,0 +1,17 @@
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+var prompt = function(t){return lines.shift();};
+
+var t1 = 0;
+var t2 = 1;
+var soma = 0;
+var fib = "";
+var N = parseInt(prompt("Digite um número"));
+for(let i = 0; i < N; i++){
+    fib+=t1 + " ";
+    soma = t1 + t2;
+    t1 = t2;
+    t2 = soma;
+}
+console.log(fib.trim());
